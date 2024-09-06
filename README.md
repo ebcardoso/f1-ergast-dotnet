@@ -7,7 +7,7 @@ A C# library containing methods for all available API calls by ErgastF1 API. Che
 var driversServices = new DriversServices();
 
 //List of all drivers
-var result = await driversServices.List(offset int?, limit int);
+var result = await driversServices.List(offset int?, limit int?);
 //List of all drivers within a season
 var result = await driversServices.ListBySeason(year int, offset int?, limit int?)
 //List of all drivers within a race
@@ -22,11 +22,26 @@ var result = await driversServices.FindByID(driverId string)
 var constructorsServices = new ConstructorsServices();
 
 //List of all drivers
-var result = await constructorsServices.List(offset int?, limit int);
+var result = await constructorsServices.List(offset int?, limit int?);
 //List of all drivers within a season
 var result = await constructorsServices.ListBySeason(year int, offset int?, limit int?)
 //List of all drivers within a race
 var result = await constructorsServices.ListByRace(year int, round int, offset int?, limit int?)
 //Driver Information
-var result = await constructorsServices.FindByID(driverId string)
+var result = await constructorsServices.FindByID(constructorId string)
+```
+
+## Circuits
+```cs
+// Creating a new instance for Circuits Services
+var circuitsServices = new CircuitsServices();
+
+//List of all circuits
+var result = await circuitsServices.List(offset int?, limit int?);
+//List of all circuits within a season
+var result = await circuitsServices.ListBySeason(year int, offset int?, limit int?)
+//List of all circuits within a race
+var result = await circuitsServices.ListByRace(year int, round int, offset int?, limit int?)
+//Driver Information
+var result = await circuitsServices.FindByID(circuitId string)
 ```
