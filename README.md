@@ -21,11 +21,11 @@ var result = await driversServices.FindByID(driverId string)
 // Creating a new instance for Constructors Services
 var constructorsServices = new ConstructorsServices();
 
-//List of all drivers
+// List of all drivers
 var result = await constructorsServices.List(offset int?, limit int?);
-//List of all drivers within a season
+// List of all drivers within a season
 var result = await constructorsServices.ListBySeason(year int, offset int?, limit int?)
-//List of all drivers within a race
+// List of all drivers within a race
 var result = await constructorsServices.ListByRace(year int, round int, offset int?, limit int?)
 // Constructor Information
 var result = await constructorsServices.FindByID(constructorId string)
@@ -53,4 +53,13 @@ var seasonsServices = new SeasonsServices();
 
 // List of all seasons
 var result = await seasonsServices.List(offset int?, limit int?);
+```
+
+## Qualifying
+```cs
+// Creating a new instance for Qualifying Services
+var qualiServices = new QualifyingsServices();
+
+// List qualifying by a race
+var result = await qualiServices.ListByRace(year int, round int, offset int?, limit int?);
 ```
