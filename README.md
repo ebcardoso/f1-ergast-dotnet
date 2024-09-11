@@ -64,15 +64,30 @@ var qualiServices = new QualifyingsServices();
 var result = await qualiServices.ListByRace(year int, round int, offset int?, limit int?);
 ```
 
+## Schedules
+```cs
+// Creating a new instance for Schedule Services
+var scheduleServices = new ScheduleServices();
+
+// List schedules by current season
+var result = await scheduleServices.ListByCurrentSeason(int? offset=0, int? limit=10);
+
+// List schedules by season
+var result = await scheduleServices.ListBySeason(int season, int? offset=0, int? limit=10);
+
+// List schedules by a race
+var result = await scheduleServices.ListByRace(int year, int round, int? offset=0, int? limit=10);
+```
+
 ## Finishing Status
 ```cs
 // Creating a new instance for Finish Status Services
 var finishingStatusServices = new FinishingStatusServices();
 
-//List of all finish status
-var result = await finishingStatusServices.List(offset int?, limit int?);
-//List of all finish status within a season
-var result = await finishingStatusServices.ListBySeason(year int, offset int?, limit int?)
-//List of all finish status within a race
-var result = await finishingStatusServices.ListByRace(year int, round int, offset int?, limit int?)
+// List of all finish status
+var result = await finishingStatusServices.List(int? offset=0, int? limit=10);
+// List of all finish status within a season
+var result = await finishingStatusServices.ListBySeason(int year, int? offset=0, int? limit=10)
+// List of all finish status within a race
+var result = await finishingStatusServices.ListByRace(int year, int round, int? offset=0, int? limit=10)
 ```
