@@ -36,11 +36,11 @@ var result = await constructorsServices.FindByID(constructorId string)
 // Creating a new instance for Circuits Services
 var circuitsServices = new CircuitsServices();
 
-//List of all circuits
+// List of all circuits
 var result = await circuitsServices.List(offset int?, limit int?);
-//List of all circuits within a season
+// List of all circuits within a season
 var result = await circuitsServices.ListBySeason(year int, offset int?, limit int?)
-//List of all circuits within a race
+// List of all circuits within a race
 var result = await circuitsServices.ListByRace(year int, round int, offset int?, limit int?)
 // Circuit Information
 var result = await circuitsServices.FindByID(circuitId string)
@@ -50,7 +50,6 @@ var result = await circuitsServices.FindByID(circuitId string)
 ```cs
 // Creating a new instance for Seasons Services
 var seasonsServices = new SeasonsServices();
-
 // List of all seasons
 var result = await seasonsServices.List(offset int?, limit int?);
 ```
@@ -59,7 +58,6 @@ var result = await seasonsServices.List(offset int?, limit int?);
 ```cs
 // Creating a new instance for Qualifying Services
 var qualiServices = new QualifyingsServices();
-
 // List qualifying by a race
 var result = await qualiServices.ListByRace(year int, round int, offset int?, limit int?);
 ```
@@ -71,12 +69,21 @@ var scheduleServices = new ScheduleServices();
 
 // List schedules by current season
 var result = await scheduleServices.ListByCurrentSeason(int? offset=0, int? limit=10);
-
 // List schedules by season
 var result = await scheduleServices.ListBySeason(int season, int? offset=0, int? limit=10);
-
 // List schedules by a race
 var result = await scheduleServices.ListByRace(int year, int round, int? offset=0, int? limit=10);
+```
+
+## Race Results
+```cs
+// Creating a new instance for Result Services
+var resultServices = new ResultServices();
+
+// List most recent result
+var result = await resultServices.MostRecent();
+// List result by a race
+var result = await resultServices.ListByRace(int year, int round);
 ```
 
 ## Finishing Status
