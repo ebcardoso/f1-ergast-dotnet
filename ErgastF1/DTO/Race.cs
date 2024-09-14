@@ -64,6 +64,9 @@ namespace ErgastF1.DTO
 
         [JsonProperty("Results", NullValueHandling = NullValueHandling.Ignore)]
         public List<Result> Results;
+
+        [JsonProperty("Laps", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Lap> Laps;
     }
 
     public class PracticeF1

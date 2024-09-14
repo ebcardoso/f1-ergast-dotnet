@@ -86,6 +86,15 @@ var result = await resultServices.MostRecent();
 var result = await resultServices.ListByRace(int year, int round);
 ```
 
+## Laps
+```cs
+// Creating a new instance for Lap Services
+LapServices lapServices = new LapServices();
+
+// Results of a lap
+var result = await lapServices.ListLapTimes(int year, int round, int lap, int? offset=0, int? limit=10);
+```
+
 ## Finishing Status
 ```cs
 // Creating a new instance for Finish Status Services
