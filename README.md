@@ -107,3 +107,14 @@ var result = await finishingStatusServices.ListBySeason(int year, int? offset=0,
 // List of all finish status within a race
 var result = await finishingStatusServices.ListByRace(int year, int round, int? offset=0, int? limit=10)
 ```
+
+## Pitstops
+```cs
+// Creating a new instance for Pitstop Services
+var pitstopServices = new PitstopServices();
+
+// List of all pitstops within a race
+var result = await pitstopServices.ListByRace(int year, int round, int? offset=0, int? limit=10)
+// List of all pitstops by stop number
+var result = await pitstopServices.ListByNumber(int year, int round, int number, int? offset=0, int? limit=10)
+```
