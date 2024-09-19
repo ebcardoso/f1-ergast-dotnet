@@ -1,0 +1,61 @@
+﻿using Newtonsoft.Json;
+
+namespace ErgastF1.DTO
+{
+    public class StandingResponse
+    {
+        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
+        public StandingDTO Data;
+    }
+
+    public class StandingDTO : PaginationDTO
+    {
+        [JsonProperty("StandingsTable", NullValueHandling = NullValueHandling.Ignore)]
+        public StandingsTable StandingsTable;
+    }
+
+    public class StandingsTable
+    {
+        [JsonProperty("season", NullValueHandling = NullValueHandling.Ignore)]
+        public string Season;
+
+        [JsonProperty("round", NullValueHandling = NullValueHandling.Ignore)]
+        public string Round;
+
+        [JsonProperty("StandingsLists", NullValueHandling = NullValueHandling.Ignore)]
+        public List<StandingsLists> StandingsLists;
+    }
+
+    public class StandingsLists
+    {
+        [JsonProperty("season", NullValueHandling = NullValueHandling.Ignore)]
+        public string Season;
+
+        [JsonProperty("round", NullValueHandling = NullValueHandling.Ignore)]
+        public string Round;
+
+        [JsonProperty("DriverStandings", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DriverStandings> DriverStandings;
+    }
+
+    public class DriverStandings
+    {
+        [JsonProperty("position", NullValueHandling = NullValueHandling.Ignore)]
+        public string Position;
+
+        [JsonProperty("positionText", NullValueHandling = NullValueHandling.Ignore)]
+        public string PositionText;
+
+        [JsonProperty("points", NullValueHandling = NullValueHandling.Ignore)]
+        public string Points;
+
+        [JsonProperty("wins", NullValueHandling = NullValueHandling.Ignore)]
+        public string Wins;
+
+        [JsonProperty("Driver", NullValueHandling = NullValueHandling.Ignore)]
+        public Driver Driver;
+
+        [JsonProperty("Constructors", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Constructor> Constructors;
+    }
+}
