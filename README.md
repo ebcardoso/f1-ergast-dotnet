@@ -118,3 +118,30 @@ var result = await pitstopServices.ListByRace(int year, int round, int? offset=0
 // List of all pitstops by stop number
 var result = await pitstopServices.ListByNumber(int year, int round, int number, int? offset=0, int? limit=10)
 ```
+
+## Standings - Drivers & Constructors
+```cs
+// Creating a new instance for Standing Services
+var standingServices = new StangingServices();
+
+// List current drivers' current standings
+var result = await standingServices.DriversCurrentStanding();
+// List standings by a season
+var result = await standingServices.DriversBySeason(int year, int? offset=0, int? limit=10);
+// List drivers standings after a race
+var result = await standingServices.DriversAfterRace(int year, int round, int? offset=0, int? limit=10);
+// List standings history of a driver
+var result = await standingServices.StandingHistoryByDriver(string driverId, int? offset=0, int? limit=10);
+// List champions by drivers
+var result = await standingServices.ChampionsHistoryByDrivers(int? offset=0, int? limit=10);
+// List current constructors' current standings
+var result = await standingServices.ConstructorsCurrentStanding();
+// List constructors standings by a season
+var result = await standingServices.ConstructorsBySeason(int year, int? offset=0, int? limit=10);
+// List standings after a race
+var result = await standingServices.ConstructorsAfterRace(int year, int round, int? offset=0, int? limit=10);
+// List standings history of a constructor
+var result = await standingServices.StandingHistoryByConstructor(string constructorId, int? offset=0, int? limit=10);
+// List champions by constructors
+var result = await standingServices.ChampionsHistoryByConstructors(int? offset=0, int? limit=10);
+```

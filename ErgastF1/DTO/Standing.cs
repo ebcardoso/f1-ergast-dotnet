@@ -36,6 +36,9 @@ namespace ErgastF1.DTO
 
         [JsonProperty("DriverStandings", NullValueHandling = NullValueHandling.Ignore)]
         public List<DriverStandings> DriverStandings;
+
+        [JsonProperty("ConstructorStandings", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ConstructorStandings> ConstructorStandings;
     }
 
     public class DriverStandings
@@ -57,5 +60,23 @@ namespace ErgastF1.DTO
 
         [JsonProperty("Constructors", NullValueHandling = NullValueHandling.Ignore)]
         public List<Constructor> Constructors;
+    }
+
+    public class ConstructorStandings
+    {
+        [JsonProperty("position", NullValueHandling = NullValueHandling.Ignore)]
+        public string Position;
+
+        [JsonProperty("positionText", NullValueHandling = NullValueHandling.Ignore)]
+        public string PositionText;
+
+        [JsonProperty("points", NullValueHandling = NullValueHandling.Ignore)]
+        public string Points;
+
+        [JsonProperty("wins", NullValueHandling = NullValueHandling.Ignore)]
+        public string Wins;
+
+        [JsonProperty("Constructor", NullValueHandling = NullValueHandling.Ignore)]
+        public Constructor Constructor;
     }
 }
