@@ -15,7 +15,6 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/laps/{lap}";
             string query = $"?offset={offset}&limit={limit}";
-
             var response = await SendRequest<LapResponse>(path, query);
 
             return response.Data;

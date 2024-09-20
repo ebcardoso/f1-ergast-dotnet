@@ -1,3 +1,5 @@
 .vs/*
-ErgastF1/bin/*
-ErgastF1/obj/*
+.vscode/*
+ErgastF1*/bin/*
+ErgastF1*/obj/*
+packages*
