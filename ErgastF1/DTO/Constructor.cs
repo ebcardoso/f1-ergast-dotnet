@@ -25,7 +25,7 @@ namespace ErgastF1.DTO
         [JsonProperty("constructorId", NullValueHandling = NullValueHandling.Ignore)]
         public string ConstructorId;
 
-        [JsonProperty("Constructors  ", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("Constructors", NullValueHandling = NullValueHandling.Ignore)]
         public List<Constructor> Constructors;
     }
 

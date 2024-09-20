@@ -7,13 +7,13 @@ A C# library containing methods for all available API calls by ErgastF1 API. Che
 var driversServices = new DriversServices();
 
 // List of all drivers
-var result = await driversServices.List(offset int?, limit int?);
+var result = await driversServices.List(int? offset=0, int? limit=10);
 // List of all drivers within a season
-var result = await driversServices.ListBySeason(year int, offset int?, limit int?)
+var result = await driversServices.ListBySeason(int year, int? offset=0, int? limit=10);
 // List of all drivers within a race
-var result = await driversServices.ListByRace(year int, round int, offset int?, limit int?)
+var result = await driversServices.ListByRace(int year, int round, int? offset=0, int? limit=10);
 // Driver Information
-var result = await driversServices.FindByID(driverId string)
+var result = await driversServices.FindByID(string driverId);
 ```
 
 ## Constructors
@@ -21,14 +21,14 @@ var result = await driversServices.FindByID(driverId string)
 // Creating a new instance for Constructors Services
 var constructorsServices = new ConstructorsServices();
 
-// List of all drivers
-var result = await constructorsServices.List(offset int?, limit int?);
-// List of all drivers within a season
-var result = await constructorsServices.ListBySeason(year int, offset int?, limit int?)
-// List of all drivers within a race
-var result = await constructorsServices.ListByRace(year int, round int, offset int?, limit int?)
+// List of all constructors
+var result = await constructorsServices.List(int? offset=0, int? limit=10);
+// List of all constructors within a season
+var result = await constructorsServices.ListBySeason(int year, int? offset=0, int? limit=10);
+// List of all constructors within a race
+var result = await constructorsServices.ListByRace(int year, int round, int? offset=0, int? limit=10);
 // Constructor Information
-var result = await constructorsServices.FindByID(constructorId string)
+var result = await constructorsServices.FindByID(string constructorId);
 ```
 
 ## Circuits
@@ -37,29 +37,31 @@ var result = await constructorsServices.FindByID(constructorId string)
 var circuitsServices = new CircuitsServices();
 
 // List of all circuits
-var result = await circuitsServices.List(offset int?, limit int?);
+var result = await circuitsServices.List(int? offset=0, int? limit=10);
 // List of all circuits within a season
-var result = await circuitsServices.ListBySeason(year int, offset int?, limit int?)
+var result = await circuitsServices.ListBySeason(int year, int? offset=0, int? limit=10);
 // List of all circuits within a race
-var result = await circuitsServices.ListByRace(year int, round int, offset int?, limit int?)
+var result = await circuitsServices.ListByRace(int year, int round, int? offset=0, int? limit=10);
 // Circuit Information
-var result = await circuitsServices.FindByID(circuitId string)
+var result = await circuitsServices.FindByID(string circuitId);
 ```
 
-## Seasaon
+## Season
 ```cs
 // Creating a new instance for Seasons Services
 var seasonsServices = new SeasonsServices();
+
 // List of all seasons
-var result = await seasonsServices.List(offset int?, limit int?);
+var result = await seasonsServices.List(int? offset=0, int? limit=10);
 ```
 
 ## Qualifying
 ```cs
 // Creating a new instance for Qualifying Services
 var qualiServices = new QualifyingsServices();
+
 // List qualifying by a race
-var result = await qualiServices.ListByRace(year int, round int, offset int?, limit int?);
+var result = await qualiServices.ListByRace(int year, int round, int? offset=0, int? limit=10);
 ```
 
 ## Schedules
@@ -103,9 +105,9 @@ var finishingStatusServices = new FinishingStatusServices();
 // List of all finish status
 var result = await finishingStatusServices.List(int? offset=0, int? limit=10);
 // List of all finish status within a season
-var result = await finishingStatusServices.ListBySeason(int year, int? offset=0, int? limit=10)
+var result = await finishingStatusServices.ListBySeason(int year, int? offset=0, int? limit=10);
 // List of all finish status within a race
-var result = await finishingStatusServices.ListByRace(int year, int round, int? offset=0, int? limit=10)
+var result = await finishingStatusServices.ListByRace(int year, int round, int? offset=0, int? limit=10);
 ```
 
 ## Pitstops
@@ -114,9 +116,9 @@ var result = await finishingStatusServices.ListByRace(int year, int round, int? 
 var pitstopServices = new PitstopServices();
 
 // List of all pitstops within a race
-var result = await pitstopServices.ListByRace(int year, int round, int? offset=0, int? limit=10)
+var result = await pitstopServices.ListByRace(int year, int round, int? offset=0, int? limit=10);
 // List of all pitstops by stop number
-var result = await pitstopServices.ListByNumber(int year, int round, int number, int? offset=0, int? limit=10)
+var result = await pitstopServices.ListByNumber(int year, int round, int number, int? offset=0, int? limit=10);
 ```
 
 ## Standings - Drivers & Constructors

@@ -12,7 +12,9 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/qualifying";
             string query = $"?offset={offset}&limit={limit}";
-            return await SendRequest<QualifyingDTO>(path, query);
+            var response = await SendRequest<QualifyingResponse>(path, query);
+
+            return response.Data;
         }
     }
 }
