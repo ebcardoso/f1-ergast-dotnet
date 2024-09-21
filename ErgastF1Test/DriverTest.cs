@@ -27,7 +27,7 @@ namespace ErgastF1Test
                         Assert.NotNull(driver.FamilyName);
                         Assert.NotNull(driver.DateOfBirth);
                         Assert.NotNull(driver.Nationality);
-            }
+                    }
         }
 
         [Fact]
