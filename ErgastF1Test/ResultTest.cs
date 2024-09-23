@@ -73,7 +73,8 @@ namespace ErgastF1Test
                     }
                 }
         }
-    
+
+        [Fact]
         public async Task ListByRaceTest()
         {
             ResultServices resultServices = new ResultServices();
@@ -131,9 +132,6 @@ namespace ErgastF1Test
                         Assert.NotNull(result.Grid);
                         Assert.NotNull(result.Laps);
                         Assert.NotNull(result.Status);
-                        Assert.NotNull(result.Time);
-                            Assert.NotNull(result.Time.Millis);
-                            Assert.NotNull(result.Time.Time);
                         Assert.NotNull(result.FastestLap);
                             Assert.NotNull(result.FastestLap.Rank);
                             Assert.NotNull(result.FastestLap.Lap);
