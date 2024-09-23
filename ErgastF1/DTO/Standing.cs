@@ -22,6 +22,9 @@ namespace ErgastF1.DTO
         [JsonProperty("round", NullValueHandling = NullValueHandling.Ignore)]
         public string Round;
 
+        [JsonProperty("driverId", NullValueHandling = NullValueHandling.Ignore)]
+        public string DriverId;
+
         [JsonProperty("StandingsLists", NullValueHandling = NullValueHandling.Ignore)]
         public List<StandingsLists> StandingsLists;
     }
