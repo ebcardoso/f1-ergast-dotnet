@@ -25,6 +25,9 @@ namespace ErgastF1.DTO
         [JsonProperty("driverId", NullValueHandling = NullValueHandling.Ignore)]
         public string DriverId;
 
+        [JsonProperty("constructorId", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConstructorId;
+
         [JsonProperty("StandingsLists", NullValueHandling = NullValueHandling.Ignore)]
         public List<StandingsLists> StandingsLists;
     }

@@ -4,6 +4,8 @@ namespace ErgastF1Test
 {
     public class StandingTest
     {
+        /* DRIVERS */
+
         [Fact]
         public async Task DriversCurrentStandingTest()
         {
@@ -153,7 +155,8 @@ namespace ErgastF1Test
         public async Task StandingHistoryByDriverTest()
         {
             StandingServices standingServices = new StandingServices();
-            var response = await standingServices.StandingHistoryByDriver("barrichelo");
+            var driverName = "barrichelo";
+            var response = await standingServices.StandingHistoryByDriver(driverName);
 
             Assert.NotNull(response);
             Assert.NotNull(response.Xmlns);
@@ -164,6 +167,7 @@ namespace ErgastF1Test
             Assert.NotNull(response.Total);
             Assert.NotNull(response.StandingsTable);
                 Assert.NotNull(response.StandingsTable.DriverId);
+                Assert.Equal(driverName, response.StandingsTable.DriverId);
                 Assert.NotNull(response.StandingsTable.StandingsLists);
                 foreach(var standingsLists in response.StandingsTable.StandingsLists)
                 {
@@ -241,6 +245,195 @@ namespace ErgastF1Test
                                 Assert.NotNull(constructor.Nationality);
                             }
                     }                    
+                }
+        }
+
+        /* CONSTRUCTORS */
+    
+        [Fact]
+        public async Task ConstructorsCurrentStandingTest()
+        {
+            StandingServices standingServices = new StandingServices();
+            var response = await standingServices.ConstructorsCurrentStanding();
+
+            Assert.NotNull(response);
+            Assert.NotNull(response.Xmlns);
+            Assert.NotNull(response.Series);
+            Assert.NotNull(response.Url);
+            Assert.NotNull(response.Limit);
+            Assert.NotNull(response.Offset);
+            Assert.NotNull(response.Total);
+            Assert.NotNull(response.StandingsTable);
+                Assert.NotNull(response.StandingsTable.Season);
+                Assert.NotNull(response.StandingsTable.StandingsLists);
+                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+                {
+                    Assert.NotNull(standingsLists);
+                    Assert.NotNull(standingsLists.Season);
+                    Assert.NotNull(standingsLists.Round);
+                    foreach(var constructorStandings in standingsLists.ConstructorStandings)
+                    {
+                        Assert.NotNull(constructorStandings);
+                        Assert.NotNull(constructorStandings.Position);
+                        Assert.NotNull(constructorStandings.PositionText);
+                        Assert.NotNull(constructorStandings.Points);
+                        Assert.NotNull(constructorStandings.Wins);
+                        Assert.NotNull(constructorStandings.Constructor);
+                            Assert.NotNull(constructorStandings.Constructor.ConstructorId);
+                            Assert.NotNull(constructorStandings.Constructor.Url);
+                            Assert.NotNull(constructorStandings.Constructor.Name);
+                            Assert.NotNull(constructorStandings.Constructor.Nationality);
+                    }                 
+                }
+        }
+    
+        [Fact]
+        public async Task ConstructorsBySeasonTest()
+        {
+            StandingServices standingServices = new StandingServices();
+            var response = await standingServices.ConstructorsBySeason(2024);
+
+            Assert.NotNull(response);
+            Assert.NotNull(response.Xmlns);
+            Assert.NotNull(response.Series);
+            Assert.NotNull(response.Url);
+            Assert.NotNull(response.Limit);
+            Assert.NotNull(response.Offset);
+            Assert.NotNull(response.Total);
+            Assert.NotNull(response.StandingsTable);
+                Assert.NotNull(response.StandingsTable.Season);
+                Assert.NotNull(response.StandingsTable.StandingsLists);
+                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+                {
+                    Assert.NotNull(standingsLists);
+                    Assert.NotNull(standingsLists.Season);
+                    Assert.NotNull(standingsLists.Round);
+                    foreach(var constructorStandings in standingsLists.ConstructorStandings)
+                    {
+                        Assert.NotNull(constructorStandings);
+                        Assert.NotNull(constructorStandings.Position);
+                        Assert.NotNull(constructorStandings.PositionText);
+                        Assert.NotNull(constructorStandings.Points);
+                        Assert.NotNull(constructorStandings.Wins);
+                        Assert.NotNull(constructorStandings.Constructor);
+                            Assert.NotNull(constructorStandings.Constructor.ConstructorId);
+                            Assert.NotNull(constructorStandings.Constructor.Url);
+                            Assert.NotNull(constructorStandings.Constructor.Name);
+                            Assert.NotNull(constructorStandings.Constructor.Nationality);
+                    }                 
+                }
+        }
+    
+        [Fact]
+        public async Task ConstructorsAfterRaceTest()
+        {
+            StandingServices standingServices = new StandingServices();
+            var response = await standingServices.ConstructorsAfterRace(2024, 5);
+
+            Assert.NotNull(response);
+            Assert.NotNull(response.Xmlns);
+            Assert.NotNull(response.Series);
+            Assert.NotNull(response.Url);
+            Assert.NotNull(response.Limit);
+            Assert.NotNull(response.Offset);
+            Assert.NotNull(response.Total);
+            Assert.NotNull(response.StandingsTable);
+                Assert.NotNull(response.StandingsTable.Season);
+                Assert.NotNull(response.StandingsTable.Round);
+                Assert.NotNull(response.StandingsTable.StandingsLists);
+                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+                {
+                    Assert.NotNull(standingsLists);
+                    Assert.NotNull(standingsLists.Season);
+                    Assert.NotNull(standingsLists.Round);
+                    foreach(var constructorStandings in standingsLists.ConstructorStandings)
+                    {
+                        Assert.NotNull(constructorStandings);
+                        Assert.NotNull(constructorStandings.Position);
+                        Assert.NotNull(constructorStandings.PositionText);
+                        Assert.NotNull(constructorStandings.Points);
+                        Assert.NotNull(constructorStandings.Wins);
+                        Assert.NotNull(constructorStandings.Constructor);
+                            Assert.NotNull(constructorStandings.Constructor.ConstructorId);
+                            Assert.NotNull(constructorStandings.Constructor.Url);
+                            Assert.NotNull(constructorStandings.Constructor.Name);
+                            Assert.NotNull(constructorStandings.Constructor.Nationality);
+                    }                 
+                }
+        }
+    
+        [Fact]
+        public async Task StandingHistoryByConstructorTest()
+        {
+            StandingServices standingServices = new StandingServices();
+            var constructorName = "benetton";
+            var response = await standingServices.StandingHistoryByConstructor(constructorName);
+
+            Assert.NotNull(response);
+            Assert.NotNull(response.Xmlns);
+            Assert.NotNull(response.Series);
+            Assert.NotNull(response.Url);
+            Assert.NotNull(response.Limit);
+            Assert.NotNull(response.Offset);
+            Assert.NotNull(response.Total);
+            Assert.NotNull(response.StandingsTable);
+                Assert.NotNull(response.StandingsTable.ConstructorId);
+                Assert.Equal(constructorName, response.StandingsTable.ConstructorId);
+                Assert.NotNull(response.StandingsTable.StandingsLists);
+                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+                {
+                    Assert.NotNull(standingsLists);
+                    Assert.NotNull(standingsLists.Season);
+                    Assert.NotNull(standingsLists.Round);
+                    foreach(var constructorStandings in standingsLists.ConstructorStandings)
+                    {
+                        Assert.NotNull(constructorStandings);
+                        Assert.NotNull(constructorStandings.Position);
+                        Assert.NotNull(constructorStandings.PositionText);
+                        Assert.NotNull(constructorStandings.Points);
+                        Assert.NotNull(constructorStandings.Wins);
+                        Assert.NotNull(constructorStandings.Constructor);
+                            Assert.NotNull(constructorStandings.Constructor.ConstructorId);
+                            Assert.NotNull(constructorStandings.Constructor.Url);
+                            Assert.NotNull(constructorStandings.Constructor.Name);
+                            Assert.NotNull(constructorStandings.Constructor.Nationality);
+                    }                 
+                }
+        }
+    
+        [Fact]
+        public async Task ChampionsHistoryByConstructorsTest()
+        {
+            StandingServices standingServices = new StandingServices();
+            var response = await standingServices.ChampionsHistoryByConstructors();
+
+            Assert.NotNull(response);
+            Assert.NotNull(response.Xmlns);
+            Assert.NotNull(response.Series);
+            Assert.NotNull(response.Url);
+            Assert.NotNull(response.Limit);
+            Assert.NotNull(response.Offset);
+            Assert.NotNull(response.Total);
+            Assert.NotNull(response.StandingsTable);
+                Assert.NotNull(response.StandingsTable.StandingsLists);
+                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+                {
+                    Assert.NotNull(standingsLists);
+                    Assert.NotNull(standingsLists.Season);
+                    Assert.NotNull(standingsLists.Round);
+                    foreach(var constructorStandings in standingsLists.ConstructorStandings)
+                    {
+                        Assert.NotNull(constructorStandings);
+                        Assert.NotNull(constructorStandings.Position);
+                        Assert.NotNull(constructorStandings.PositionText);
+                        Assert.NotNull(constructorStandings.Points);
+                        Assert.NotNull(constructorStandings.Wins);
+                        Assert.NotNull(constructorStandings.Constructor);
+                            Assert.NotNull(constructorStandings.Constructor.ConstructorId);
+                            Assert.NotNull(constructorStandings.Constructor.Url);
+                            Assert.NotNull(constructorStandings.Constructor.Name);
+                            Assert.NotNull(constructorStandings.Constructor.Nationality);
+                    }                 
                 }
         }
     
