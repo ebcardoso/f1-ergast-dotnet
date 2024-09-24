@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class LapResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public LapDTO Data;
-    }
-
     public class LapDTO : PaginationDTO
     {
         [JsonProperty("RaceTable", NullValueHandling = NullValueHandling.Ignore)]
-        public RaceTable RaceTable;
+        public RaceTable Content;
     }
 
     public class Lap

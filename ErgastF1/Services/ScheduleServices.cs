@@ -11,9 +11,7 @@ namespace ErgastF1.Services
         {
             string path = "current";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<RaceResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<RaceDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}.json
@@ -21,18 +19,14 @@ namespace ErgastF1.Services
         {
             string path = $"{year}";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<RaceResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<RaceDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/{round}.json
         public async Task<RaceDTO> ListByRace(int year, int round)
         {
             string path = $"{year}/{round}";
-            var response = await SendRequest<RaceResponse>(path, "");
-
-            return response.Data;
+            return await SendRequest<RaceDTO>(path, "");
         }
     }
 }

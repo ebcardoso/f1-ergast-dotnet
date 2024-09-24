@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class ConstructorResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public ConstructorDTO Data;
-    }
-
     public class ConstructorDTO : PaginationDTO
     {
         [JsonProperty("ConstructorTable", NullValueHandling = NullValueHandling.Ignore)]
-        public ConstructorTable ConstructorTable;
+        public ConstructorTable Content;
     }
 
     public class ConstructorTable

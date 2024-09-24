@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class DriverResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public DriverDTO Data;
-    }
-
     public class DriverDTO : PaginationDTO
     {
         [JsonProperty("DriverTable", NullValueHandling = NullValueHandling.Ignore)]
-        public DriverTable DriverTable;
+        public DriverTable Content;
     }
 
     public class DriverTable

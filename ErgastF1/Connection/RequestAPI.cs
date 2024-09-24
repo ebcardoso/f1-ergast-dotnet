@@ -2,7 +2,7 @@
 {
     public class RequestAPI
     {
-        private readonly String baseUrl;
+        private readonly string baseUrl;
 
         public RequestAPI()
         {
@@ -11,7 +11,7 @@
 
         public async Task<HttpResponseMessage> Get(string path, string query)
         {
-            String url = $"{baseUrl}{path}.json{query}";
+            string url = $"{baseUrl}{path}.json{query}";
 
             Console.WriteLine(url);
 

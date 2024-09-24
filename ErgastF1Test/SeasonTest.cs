@@ -17,9 +17,9 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.SeasonTable);
-                Assert.NotNull(response.SeasonTable.Seasons);
-                    foreach (var season in response.SeasonTable.Seasons)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Seasons);
+                    foreach (var season in response.Content.Seasons)
                     {
                         Assert.NotNull(season.SeasonYear);
                         Assert.NotNull(season.Url);

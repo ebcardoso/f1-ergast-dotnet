@@ -1,5 +1,4 @@
 ﻿using ErgastF1.DTO;
-using System.Text;
 
 namespace ErgastF1.Services
 {
@@ -12,9 +11,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/qualifying";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<QualifyingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<QualifyingDTO>(path, query);
         }
     }
 }

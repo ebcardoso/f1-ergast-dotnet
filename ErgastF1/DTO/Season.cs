@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class SeasonResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public SeasonDTO Data;
-    }
-
     public class SeasonDTO : PaginationDTO
     {
         [JsonProperty("SeasonTable", NullValueHandling = NullValueHandling.Ignore)]
-        public SeasonTable SeasonTable;
+        public SeasonTable Content;
     }
 
     public class SeasonTable

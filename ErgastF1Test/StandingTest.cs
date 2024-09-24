@@ -19,10 +19,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.Season);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -67,10 +67,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.Season);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -115,11 +115,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.Season);
-                Assert.NotNull(response.StandingsTable.Round);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Round);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -165,11 +165,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.DriverId);
-                Assert.Equal(driverName, response.StandingsTable.DriverId);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.DriverId);
+                Assert.Equal(driverName, response.Content.DriverId);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -214,9 +214,9 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -263,10 +263,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.Season);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -300,10 +300,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.Season);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -337,11 +337,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.Season);
-                Assert.NotNull(response.StandingsTable.Round);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Round);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -376,11 +376,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.ConstructorId);
-                Assert.Equal(constructorName, response.StandingsTable.ConstructorId);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.ConstructorId);
+                Assert.Equal(constructorName, response.Content.ConstructorId);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);
@@ -414,9 +414,9 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StandingsTable);
-                Assert.NotNull(response.StandingsTable.StandingsLists);
-                foreach(var standingsLists in response.StandingsTable.StandingsLists)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.StandingsLists);
+                foreach(var standingsLists in response.Content.StandingsLists)
                 {
                     Assert.NotNull(standingsLists);
                     Assert.NotNull(standingsLists.Season);

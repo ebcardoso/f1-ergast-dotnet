@@ -17,11 +17,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.RaceTable);
-                Assert.NotNull(response.RaceTable.Season);
-                Assert.NotNull(response.RaceTable.Round);
-                Assert.NotNull(response.RaceTable.Races);
-                foreach(var race in response.RaceTable.Races)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Round);
+                Assert.NotNull(response.Content.Races);
+                foreach(var race in response.Content.Races)
                 {
                     Assert.NotNull(race);
                     Assert.NotNull(race.Season);
@@ -65,11 +65,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.RaceTable);
-                Assert.NotNull(response.RaceTable.Season);
-                Assert.NotNull(response.RaceTable.Round);
-                Assert.NotNull(response.RaceTable.Races);
-                foreach(var race in response.RaceTable.Races)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Round);
+                Assert.NotNull(response.Content.Races);
+                foreach(var race in response.Content.Races)
                 {
                     Assert.NotNull(race);
                     Assert.NotNull(race.Season);

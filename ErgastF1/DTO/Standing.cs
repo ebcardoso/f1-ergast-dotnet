@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class StandingResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public StandingDTO Data;
-    }
-
     public class StandingDTO : PaginationDTO
     {
         [JsonProperty("StandingsTable", NullValueHandling = NullValueHandling.Ignore)]
-        public StandingsTable StandingsTable;
+        public StandingsTable Content;
     }
 
     public class StandingsTable

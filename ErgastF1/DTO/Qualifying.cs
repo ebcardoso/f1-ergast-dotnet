@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class QualifyingResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public QualifyingDTO Data;
-    }
-
     public class QualifyingDTO : PaginationDTO
     {
         [JsonProperty("RaceTable", NullValueHandling = NullValueHandling.Ignore)]
-        public RaceTable RaceTable;
+        public RaceTable Content;
     }
 
     public class QualifyingResults

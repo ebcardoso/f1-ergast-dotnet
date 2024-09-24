@@ -17,9 +17,9 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.DriverTable);
-                Assert.NotNull(response.DriverTable.Drivers);
-                    foreach (var driver in response.DriverTable.Drivers)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Drivers);
+                    foreach (var driver in response.Content.Drivers)
                     {
                         Assert.NotNull(driver.DriverId);
                         Assert.NotNull(driver.Url);
@@ -43,10 +43,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.DriverTable);
-                Assert.NotNull(response.DriverTable.Season);
-                Assert.NotNull(response.DriverTable.Drivers);
-                    foreach (var driver in response.DriverTable.Drivers)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Drivers);
+                    foreach (var driver in response.Content.Drivers)
                     {
                         Assert.NotNull(driver.DriverId);
                         Assert.NotNull(driver.Url);
@@ -70,11 +70,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.DriverTable);
-                Assert.NotNull(response.DriverTable.Season);
-                Assert.NotNull(response.DriverTable.Round);
-                Assert.NotNull(response.DriverTable.Drivers);
-                    foreach (var driver in response.DriverTable.Drivers)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Round);
+                Assert.NotNull(response.Content.Drivers);
+                    foreach (var driver in response.Content.Drivers)
                     {
                         Assert.NotNull(driver.DriverId);
                         Assert.NotNull(driver.Url);
@@ -98,11 +98,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.DriverTable);
-                Assert.NotNull(response.DriverTable.DriverId);
-                Assert.Equal("barrichello", response.DriverTable.DriverId);
-                Assert.NotNull(response.DriverTable.Drivers);
-                    foreach (var driver in response.DriverTable.Drivers)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.DriverId);
+                Assert.Equal("barrichello", response.Content.DriverId);
+                Assert.NotNull(response.Content.Drivers);
+                    foreach (var driver in response.Content.Drivers)
                     {
                         Assert.NotNull(driver.DriverId);
                         Assert.Equal("barrichello", driver.DriverId);

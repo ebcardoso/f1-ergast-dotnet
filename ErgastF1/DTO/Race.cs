@@ -3,16 +3,10 @@ using System.Xml;
 
 namespace ErgastF1.DTO
 {
-    public class RaceResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public RaceDTO Data;
-    }
-
-	public class RaceDTO : PaginationDTO
+    public class RaceDTO : PaginationDTO
 	{
         [JsonProperty("RaceTable", NullValueHandling = NullValueHandling.Ignore)]
-        public RaceTable RaceTable;
+        public RaceTable Content;
     }
 
     public class RaceTable

@@ -1,4 +1,5 @@
 ﻿using ErgastF1.Connection;
+using ErgastF1.DTO;
 using Newtonsoft.Json;
 
 namespace ErgastF1.Services
@@ -18,8 +19,8 @@ namespace ErgastF1.Services
             if (response.IsSuccessStatusCode)
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
-                var jsonObject = JsonConvert.DeserializeObject<T>(jsonString);
-                return jsonObject;
+                var jsonObject = JsonConvert.DeserializeObject<ErgastResponse<T>>(jsonString);
+                return jsonObject.Data;
             }
             else
             {

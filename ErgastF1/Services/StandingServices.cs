@@ -12,9 +12,7 @@ namespace ErgastF1.Services
         public async Task<StandingDTO> DriversCurrentStanding()
         {
             string path = "current/driverStandings";
-            var response = await SendRequest<StandingResponse>(path);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path);
         }
 
         // ergast.com/api/f1/{{year}}/driverStandings.json
@@ -22,9 +20,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/driverStandings";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<StandingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path, query);
         }
 
         // ergast.com/api/f1/{{year}}/{{round}}/driverStandings.json
@@ -32,9 +28,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/driverStandings";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<StandingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path, query);
         }
 
         // ergast.com/api/f1/{{year}}/{{round}}/driverStandings.json
@@ -42,9 +36,7 @@ namespace ErgastF1.Services
         {
             string path = $"drivers/{driverId}/driverStandings";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<StandingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path, query);
         }
 
         // ergast.com/api/f1/driverStandings/1.json
@@ -52,9 +44,7 @@ namespace ErgastF1.Services
         {
             string path = $"driverStandings/1";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<StandingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path, query);
         }
 
         /* CONSTRUCTORS */
@@ -63,9 +53,7 @@ namespace ErgastF1.Services
         public async Task<StandingDTO> ConstructorsCurrentStanding()
         {
             string path = "current/constructorStandings";
-            var response = await SendRequest<StandingResponse>(path);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path);
         }
 
 
@@ -74,9 +62,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/constructorStandings";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<StandingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path, query);
         }
 
         // ergast.com/api/f1/{{year}}/{{round}}/constructorStandings.json
@@ -84,9 +70,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/constructorStandings";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<StandingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path, query);
         }
 
         // ergast.com/api/f1/{{year}}/{{round}}/constructorStandings.json
@@ -94,9 +78,7 @@ namespace ErgastF1.Services
         {
             string path = $"constructors/{constructorId}/constructorStandings";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<StandingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path, query);
         }
 
         // ergast.com/api/f1/constructorStandings/1.json
@@ -104,9 +86,7 @@ namespace ErgastF1.Services
         {
             string path = $"constructorStandings/1";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<StandingResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<StandingDTO>(path, query);
         }
     }
 }

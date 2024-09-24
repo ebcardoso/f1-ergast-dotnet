@@ -11,9 +11,7 @@ namespace ErgastF1.Services
         {
             string path = "status";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<FinishingStatusResponse>(path, query);
-        
-            return response.Data;
+            return await SendRequest<FinishingStatusDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/{round}/status.json
@@ -21,9 +19,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/status";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<FinishingStatusResponse>(path, query);
-        
-            return response.Data;
+            return await SendRequest<FinishingStatusDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/{round}/status.json
@@ -31,9 +27,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/status";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<FinishingStatusResponse>(path, query);
-        
-            return response.Data;
+            return await SendRequest<FinishingStatusDTO>(path, query);
         }
     }
 }

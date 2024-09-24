@@ -11,9 +11,7 @@ namespace ErgastF1.Services
         {
             string path = "circuits";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<CircuitResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<CircuitDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/circuits.json
@@ -21,9 +19,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/circuits";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<CircuitResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<CircuitDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/{round}/circuits.json
@@ -31,18 +27,14 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/circuits";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<CircuitResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<CircuitDTO>(path, query);
         }
 
         // ergast.com/api/f1/{circuitId}/circuits.json
         public async Task<CircuitDTO> FindByID(string id)
         {
             string path = $"circuits/{id}";
-            var response = await SendRequest<CircuitResponse>(path);
-
-            return response.Data;
+            return await SendRequest<CircuitDTO>(path);
         }
     }
 }

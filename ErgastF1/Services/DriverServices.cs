@@ -11,9 +11,7 @@ namespace ErgastF1.Services
         {
             string path = "drivers";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<DriverResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<DriverDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/drivers.json
@@ -21,9 +19,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/drivers";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<DriverResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<DriverDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/{round}/drivers.json
@@ -31,18 +27,14 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/drivers";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<DriverResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<DriverDTO>(path, query);
         }
 
         // ergast.com/api/f1/{driverId}/drivers.json
         public async Task<DriverDTO> FindByID(string id)
         {
             string path = $"drivers/{id}";
-            var response = await SendRequest<DriverResponse>(path);
-
-            return response.Data;
+            return await SendRequest<DriverDTO>(path);
         }
     }
 }

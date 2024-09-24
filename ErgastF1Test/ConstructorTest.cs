@@ -17,9 +17,9 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.ConstructorTable);
-                Assert.NotNull(response.ConstructorTable.Constructors);
-                    foreach (var constructor in response.ConstructorTable.Constructors)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Constructors);
+                    foreach (var constructor in response.Content.Constructors)
                     {
                         Assert.NotNull(constructor.ConstructorId);
                         Assert.NotNull(constructor.Url);
@@ -41,10 +41,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.ConstructorTable);
-                Assert.NotNull(response.ConstructorTable.Season);
-                Assert.NotNull(response.ConstructorTable.Constructors);
-                    foreach (var constructor in response.ConstructorTable.Constructors)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Constructors);
+                    foreach (var constructor in response.Content.Constructors)
                     {
                         Assert.NotNull(constructor.ConstructorId);
                         Assert.NotNull(constructor.Url);
@@ -66,11 +66,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.ConstructorTable);
-                Assert.NotNull(response.ConstructorTable.Season);
-                Assert.NotNull(response.ConstructorTable.Round);
-                Assert.NotNull(response.ConstructorTable.Constructors);
-                    foreach (var constructor in response.ConstructorTable.Constructors)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Round);
+                Assert.NotNull(response.Content.Constructors);
+                    foreach (var constructor in response.Content.Constructors)
                     {
                         Assert.NotNull(constructor.ConstructorId);
                         Assert.NotNull(constructor.Url);
@@ -92,11 +92,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.ConstructorTable);
-                Assert.NotNull(response.ConstructorTable.ConstructorId);
-                Assert.Equal("benetton", response.ConstructorTable.ConstructorId);
-                Assert.NotNull(response.ConstructorTable.Constructors);
-                    foreach (var constructor in response.ConstructorTable.Constructors)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.ConstructorId);
+                Assert.Equal("benetton", response.Content.ConstructorId);
+                Assert.NotNull(response.Content.Constructors);
+                    foreach (var constructor in response.Content.Constructors)
                     {
                         Assert.NotNull(constructor.ConstructorId);
                         Assert.Equal("benetton", constructor.ConstructorId);

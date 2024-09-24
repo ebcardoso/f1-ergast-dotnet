@@ -11,9 +11,7 @@ namespace ErgastF1.Services
         {
             string path = "constructors";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<ConstructorResponse>(path, query);
-        
-            return response.Data;
+            return await SendRequest<ConstructorDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/constructors.json
@@ -21,9 +19,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/constructors";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<ConstructorResponse>(path, query);
-        
-            return response.Data;
+            return await SendRequest<ConstructorDTO>(path, query);
         }
 
         // ergast.com/api/f1/{constructorsId}/constructors.json
@@ -31,18 +27,14 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/constructors";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<ConstructorResponse>(path, query);
-        
-            return response.Data;
+            return await SendRequest<ConstructorDTO>(path, query);
         }
 
         // ergast.com/api/f1/{constructorsId}/constructors.json
         public async Task<ConstructorDTO> FindByID(string id)
         {
             string path = $"constructors/{id}";
-            var response = await SendRequest<ConstructorResponse>(path);
-
-            return response.Data;
+            return await SendRequest<ConstructorDTO>(path);
         }
     }
 }

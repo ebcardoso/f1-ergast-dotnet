@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class FinishingStatusResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public FinishingStatusDTO Data;
-    }
-
     public class FinishingStatusDTO : PaginationDTO
     {
         [JsonProperty("StatusTable", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusTable StatusTable;
+        public StatusTable Content;
     }
 
     public class StatusTable

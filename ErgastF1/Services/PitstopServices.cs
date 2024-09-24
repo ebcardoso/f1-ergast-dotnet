@@ -11,9 +11,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/pitstops";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<PitstopResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<PitstopDTO>(path, query);
         }
 
         // ergast.com/api/f1/{year}/{round}/pitstops.json
@@ -21,9 +19,7 @@ namespace ErgastF1.Services
         {
             string path = $"{year}/{round}/pitstops/{number}";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<PitstopResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<PitstopDTO>(path, query);
         }
     }
 }

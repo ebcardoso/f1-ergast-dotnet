@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class PitstopResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public PitstopDTO Data;
-    }
-
     public class PitstopDTO : PaginationDTO
     {
         [JsonProperty("RaceTable", NullValueHandling = NullValueHandling.Ignore)]
-        public RaceTable RaceTable;
+        public RaceTable Content;
     }
 
     public class Pitstop

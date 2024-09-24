@@ -17,9 +17,9 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StatusTable);
-                Assert.NotNull(response.StatusTable.Status);
-                foreach(var status in response.StatusTable.Status)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Status);
+                foreach(var status in response.Content.Status)
                 {
                     Assert.NotNull(status);
                     Assert.NotNull(status.StatusId);
@@ -41,10 +41,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StatusTable);
-                Assert.NotNull(response.StatusTable.Season);
-                Assert.NotNull(response.StatusTable.Status);
-                foreach(var status in response.StatusTable.Status)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Status);
+                foreach(var status in response.Content.Status)
                 {
                     Assert.NotNull(status);
                     Assert.NotNull(status.StatusId);
@@ -66,11 +66,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.StatusTable);
-                Assert.NotNull(response.StatusTable.Season);
-                Assert.NotNull(response.StatusTable.Round);
-                Assert.NotNull(response.StatusTable.Status);
-                foreach(var status in response.StatusTable.Status)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Round);
+                Assert.NotNull(response.Content.Status);
+                foreach(var status in response.Content.Status)
                 {
                     Assert.NotNull(status);
                     Assert.NotNull(status.StatusId);

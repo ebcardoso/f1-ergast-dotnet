@@ -9,9 +9,7 @@ namespace ErgastF1.Services
         {
             string path = "seasons";
             string query = $"?offset={offset}&limit={limit}";
-            var response = await SendRequest<SeasonResponse>(path, query);
-
-            return response.Data;
+            return await SendRequest<SeasonDTO>(path, query);
         }
     }
 }

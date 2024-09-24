@@ -2,16 +2,10 @@
 
 namespace ErgastF1.DTO
 {
-    public class CircuitResponse
-    {
-        [JsonProperty("MRData", NullValueHandling = NullValueHandling.Ignore)]
-        public CircuitDTO Data;
-    }
-
     public class CircuitDTO : PaginationDTO
     {   
         [JsonProperty("CircuitTable", NullValueHandling = NullValueHandling.Ignore)]
-        public CircuitTable CircuitTable;
+        public CircuitTable Content;
     }
 
     public class CircuitTable

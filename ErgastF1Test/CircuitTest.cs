@@ -17,9 +17,9 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.CircuitTable);
-                Assert.NotNull(response.CircuitTable.Circuits);
-                    foreach (var circuit in response.CircuitTable.Circuits)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Circuits);
+                    foreach (var circuit in response.Content.Circuits)
                     {
                         Assert.NotNull(circuit.CircuitId);
                         Assert.NotNull(circuit.Url);
@@ -45,10 +45,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.CircuitTable);
-                Assert.NotNull(response.CircuitTable.Season);
-                Assert.NotNull(response.CircuitTable.Circuits);
-                    foreach (var circuit in response.CircuitTable.Circuits)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Circuits);
+                    foreach (var circuit in response.Content.Circuits)
                     {
                         Assert.NotNull(circuit.CircuitId);
                         Assert.NotNull(circuit.Url);
@@ -75,11 +75,11 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-            Assert.NotNull(response.CircuitTable);
-                Assert.NotNull(response.CircuitTable.Season);
-                Assert.NotNull(response.CircuitTable.Round);
-                Assert.NotNull(response.CircuitTable.Circuits);
-                    foreach (var circuit in response.CircuitTable.Circuits)
+            Assert.NotNull(response.Content);
+                Assert.NotNull(response.Content.Season);
+                Assert.NotNull(response.Content.Round);
+                Assert.NotNull(response.Content.Circuits);
+                    foreach (var circuit in response.Content.Circuits)
                     {
                         Assert.NotNull(circuit.CircuitId);
                         Assert.NotNull(circuit.Url);
@@ -106,10 +106,10 @@ namespace ErgastF1Test
             Assert.NotNull(response.Limit);
             Assert.NotNull(response.Offset);
             Assert.NotNull(response.Total);
-                Assert.NotNull(response.CircuitTable);
-                    Assert.Equal("hungaroring", response.CircuitTable.CircuitId); 
-                    Assert.NotNull(response.CircuitTable.Circuits);
-                        foreach (var circuit in response.CircuitTable.Circuits)
+                Assert.NotNull(response.Content);
+                    Assert.Equal("hungaroring", response.Content.CircuitId); 
+                    Assert.NotNull(response.Content.Circuits);
+                        foreach (var circuit in response.Content.Circuits)
                         {
                             Assert.NotNull(circuit.CircuitId);
                             Assert.Equal("hungaroring", circuit.CircuitId);
